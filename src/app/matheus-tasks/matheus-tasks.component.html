@@ -1,0 +1,35 @@
+<br />
+<div class="row">
+  <div class="col-8">
+    <input
+      #tarefa
+      id="tarefa"
+      type="text"
+      type="text"
+      class="form-control"
+      placeholder="Titulo da tarefa"
+    />
+  </div>
+  <div class="col-2">
+    <button (click)="tarefas.setTarefa(tarefa.value)" class="btn btn-success">
+      Adicionar
+    </button>
+  </div>
+  <br /><br />
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th>Tarefa</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tr *ngFor="let i of tarefas.getTarefas()">
+      <td>{{ i.tarefa }}</td>
+      <td>
+        <button (click)="tarefas.deleteTarefa(i)" class="btn btn-danger">
+          Excluir
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
